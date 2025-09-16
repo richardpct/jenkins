@@ -1,21 +1,8 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                sh 'ls -la'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'ls -la'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'ls -la'
-            }
-        }
-    }
+  agent any
+  stages {
+    stage('Build') { steps { sh 'echo build && sleep 1' } }
+    stage('Test')  { steps { sh 'echo test && sleep 1' } }
+    stage('Deploy'){ steps { sh 'echo deploy && sleep 1' } }
+  }
 }
